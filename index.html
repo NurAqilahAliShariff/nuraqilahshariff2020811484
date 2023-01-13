@@ -1,0 +1,111 @@
+<html>
+<head>
+<link href="asset/css/style.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 10;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #ABB2B9;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 20px 80px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ABB2B9;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #ABB2B9;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="biodata.html">Biodata</a>
+  <a href="education.html">Education</a>
+  <a href="family.html">Family</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="playlist.html">Playlist</a>
+</div>
+
+<br>
+
+<div class="bg-image"></div>
+
+<div class="bg-text">
+  <p style="font-family:Rustico; font-size:50px">WELCOME TO MY WEBSITE</p>
+  <p style="font-family:Rustico; font-size:30px">I am Nur Aqilah Binti Ali Shariff</p>
+</div>
+
+
+
+<body onLoad="initClock()">
+
+  <div id="timedate">
+    <a id="mon">January</a>
+    <a id="d">1</a>,
+    <a id="y">0</a><br />
+    <a id="h">12</a> :
+    <a id="m">00</a>:
+    <a id="s">00</a>:
+    <a id="mi">000</a>
+  </div>
+
+
+<script>
+// START CLOCK SCRIPT
+
+Number.prototype.pad = function(n) {
+  for (var r = this.toString(); r.length < n; r = 0 + r);
+  return r;
+};
+
+
+function updateClock() {
+  var now = new Date();
+  var milli = now.getMilliseconds(),
+    sec = now.getSeconds(),
+    min = now.getMinutes(),
+    hou = now.getHours(),
+    mo = now.getMonth(),
+    dy = now.getDate(),
+    yr = now.getFullYear();
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var tags = ["mon", "d", "y", "h", "m", "s", "mi"],
+    corr = [months[mo], dy, yr, hou.pad(2), min.pad(2), sec.pad(2), milli];
+  for (var i = 0; i < tags.length; i++)
+    document.getElementById(tags[i]).firstChild.nodeValue = corr[i];
+}
+
+function initClock() {
+  updateClock();
+  window.setInterval("updateClock()", 1);
+}
+
+// END CLOCK SCRIPT</script>
+
+<br><br>
+
+<center><a href="https://wa.me/60195672781"><img src="asset/images/whatsapp.png" style="width="10% height="10%"></a></center>
+
+
+</body>
+</html>
+
+
